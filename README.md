@@ -1,2 +1,5 @@
-# angularone-yt
-Angular One and You Tube API
+# AngularJS Base Boilerplate
+
+Boilerplate for AngularJS 1.5.4 ONLY
+
+
