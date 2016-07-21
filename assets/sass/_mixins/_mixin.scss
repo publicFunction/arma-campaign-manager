@@ -1,0 +1,11 @@
+
+@mixin background_full() {
+  background-position: center center;
+  background-color: #000;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@mixin background_transparent($red, $green, $blue, $trans) {
+  background-color: rgba($red, $green, $blue, $trans);
+}

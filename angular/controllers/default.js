@@ -16,4 +16,12 @@
 
     });
 
+    controllers.controller('DashboardController', function($scope, $state) {
+        
+    });
+
+    controllers.controller('AuthController', function($scope, $state) {
+
+    });
+
 })();

@@ -1,0 +1,39 @@
+nav {
+  &.navbar.navbar-default {
+    background-color: #000;
+    border-color: #666;
+    a {
+      color: #FFF;
+      &.navbar-brand {
+        color: #FFF;
+      }
+    }
+  }
+}
+
+.navbar-collapse {
+  position: relative;
+  ul {
+    &.nav {
+      width: 80%;
+    }
+    &> li {
+      &.navbar-status {
+        position: absolute;
+        right: 3%;
+        top: 0.5rem;
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+        &> div {
+           a {
+             color: #FFF;
+             &:hover {
+               text-decoration: none;
+             }
+           }
+        }
+      }
+    }
+  }
+}

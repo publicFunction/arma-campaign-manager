@@ -6,10 +6,10 @@
         <meta name="Author" content="Chris Moss, publicfunction.co.uk">
         <meta name="Access-Control-Allow-Origin" crossorigin="anonymous">
         <link href="/styles/style.css" type="text/css" rel="stylesheet">
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-        <title>AngularJS Boilerplate</title>
+        <title>Campaign Manager | ARMA</title>
     </head>
     <body>
+        <div class="background"></div>
         <div class="container">
             <nav class="navbar navbar-default">
                 <div class="container">
@@ -20,13 +20,17 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" ui-sref="home">AngularJS Boilerplate</a>
+                        <a class="navbar-brand" ui-sref="home">Campaign Manager</a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li><a ui-sref="home">Home</a></li>
                             <li><a ui-sref="about">About</a></li>
                             <li><a ui-sref="contact">Contact</a></li>
+                            <li class="navbar-status">
+                                <div class="btn btn-primary" ng-show="true"><a ui-sref="login">Login</a></div>
+                                <div class="btn btn-warn" ng-show="false"><a ui-sref="logout">Log Out</a></div>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -36,6 +40,9 @@
             <div ui-view class="view-animate container-fluid"></div>
         </div>
         <div class="container footer">
+            <div class="col-md-12">
+                &copy;2016 publicFunction.co.uk (Chris Moss). All Rights Reserved.
+            </div>
             <div class="col-md-4"></div>
             <div class="col-md-4"></div>
             <div class="col-md-4"></div>

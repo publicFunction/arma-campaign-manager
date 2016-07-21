@@ -7,24 +7,33 @@
     application.config(function($stateProvider, $urlRouterProvider, $sceDelegateProvider) {
 
         $urlRouterProvider.otherwise('/');
-
-        $sceDelegateProvider.resourceUrlWhitelist([
-            'self',
-            'https://www.youtube.com/**']);
+        $sceDelegateProvider.resourceUrlWhitelist(['self']);
 
         $stateProvider
             .state('home', {
                 url         : "/",
                 templateUrl : "/templates/home.html",
                 controller  : 'DefaultController'
-            }).state('about', {
-                url         : "/",
+            })
+            .state('dashboard', {
+                url         : "/home",
+                templateUrl : "/templates/dashboard.html",
+                controller  : 'DashboardController'
+            })
+            .state('about', {
+                url         : "/about",
                 templateUrl : "/templates/about.html",
                 controller  : 'DefaultController'
-            }).state('contact', {
-                url         : "/",
+            })
+            .state('contact', {
+                url         : "/contact",
                 templateUrl : "/templates/contact.html",
                 controller  : 'DefaultController'
+            })
+            .state('login', {
+                url         : "/login",
+                templateUrl : "/templates/auth/login.html",
+                controller  : 'AuthController'
             });
         });
 })();
