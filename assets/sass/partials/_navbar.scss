@@ -1,11 +1,75 @@
 nav {
   &.navbar.navbar-default {
-    background-color: #000;
-    border-color: #666;
+    @include background_transparent(0, 0, 0, 0.7);
+    border: none;
     a {
-      color: #FFF;
       &.navbar-brand {
-        color: #FFF;
+        color: $arma_orange;
+        font-weight: 700;
+        text-indent: 2rem;
+        position: relative;
+        span.arma {
+          position: absolute;
+          left: 0;
+          top: 0.5rem;
+          display: inline-block;
+          width: 35px;
+          height: 35px;
+          background-image: url('/assets/images/sprites/icon_sprite.png');
+          background-position: 0px -595px;
+        }
+        &:hover {
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .navbar-header {
+    margin: 10px 0;
+    width: auto;
+    button {
+
+    }
+  }
+}
+.navbar {
+  margin: 0;
+}
+
+.navbar-nav {
+  margin: 0;
+  &> li {
+    position: relative;
+    margin: 0 1px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    border-right: 2px solid $menu_item_border_color;
+    a {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 15px;
+      &:hover {
+        background-color: $arma_orange !important;
+      }
+      span {
+        background: url('/assets/images/sprites/icon_sprite.png') no-repeat center center transparent;
+        width: 35px;
+        height: 35px;
+        display: block;
+        &.home {
+          background-position: 0px -665px;
+        }
+        &.about {
+          background-position: 0px -453px;
+        }
+        &.contact {
+          background-position: 0px -386px;
+        }
       }
     }
   }
@@ -15,21 +79,57 @@ nav {
   position: relative;
   ul {
     &.nav {
-      width: 80%;
+      width: auto;
     }
     &> li {
       &.navbar-status {
         position: absolute;
         right: 3%;
-        top: 0.5rem;
+        top: 0;
+        padding: 0;
         display: inline-block;
         width: auto;
         vertical-align: middle;
+        border: none;
+        background: url('/assets/images/icons/account_btn_icon.png') no-repeat 8% 50% $auth_button_background_light;
+        .auth {
+          width: 67%;
+          margin-left: 2.5rem;
+          padding: 9.5px 5px;
+          a {
+            display: inline-block;
+            width: 100%;
+            &:hover {
+              background: transparent !important;
+            }
+          }
+          &.login {
+            &:hover {
+              background-color: $auth_button_background_dark;
+              a {
+                &:hover {
+                  background: transparent;
+                }
+              }
+            }
+          }
+          &.logout {
+            &:hover {
+              background-color: $auth_button_background_dark;
+              a {
+                &:hover {
+                  background: transparent;
+                }
+              }
+            }
+          }
+        }
         &> div {
            a {
-             color: #FFF;
+             color: $nav_default_text_color;
              &:hover {
                text-decoration: none;
+               cursor: pointer;
              }
            }
         }

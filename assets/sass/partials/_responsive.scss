@@ -1,0 +1,107 @@
+@import "../_definitions/variables";
+
+
+@media all and (max-width: $bp-small) {
+  .navbar-collapse {
+    padding: 0;
+    ul {
+      &.nav {
+        width: 100%;
+        overflow: hidden;
+      }
+      & > li {
+        width: 100%;
+        &.navbar-status {
+          position: relative;
+          width: 100%;
+          right: 0;
+          .auth {
+            margin-left: 5rem;
+            width: 77%;
+            a {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  body {
+    .welcome {
+      .header-logo {
+        .arma-logo {
+          height: 75px;
+        }
+      }
+    }
+  }
+}
+
+@media all and (min-width: $bp-small) and (max-width: $bp-med) {
+  .navbar-collapse {
+    ul {
+      &.nav {
+        width: 53%;
+      }
+    }
+  }
+  body {
+    .welcome {
+      .header-logo {
+        .arma-logo {
+          height: 100px;
+        }
+      }
+    }
+  }
+}
+
+@media all and (min-width: $bp-med) and (max-width: $bp-large) {
+  body {
+    .welcome {
+      .header-logo {
+        .stripe {
+          display: none;
+        }
+        .arma-logo {
+          height: 140px;
+        }
+      }
+    }
+  }
+}
+
+@media all and (min-width: $bp-xsmall) and (max-width: $bp-odd-one) {
+  .welcome {
+    .header-logo {
+      .stripe {
+        display: none;
+      }
+      .arma-logo {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+@media all and (min-width: $bp-large) and (max-width: $bp-larger) {
+
+}
+
+@media all and (min-width: $bp-larger) and (max-width: $bp-xl) {
+  .navbar-collapse {
+    ul {
+      &.nav {
+        width: 70%;
+      }
+    }
+  }
+}
+
+@media all and (min-width: $bp-xl) and (max-width: $bp-xxl){
+
+}
+
+@media all and (min-width: $bp-xxl) {
+
+}

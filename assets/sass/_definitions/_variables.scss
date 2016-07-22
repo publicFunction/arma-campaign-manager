@@ -1,0 +1,22 @@
+/*
+  Breakpoints
+  480px, 768px, 960px, & 1280px but they have minor breakpoints at 1440px and 1600px.
+
+*/
+
+//320px
+$bp-xsmall : 20em;
+//480px
+$bp-small : 30em;
+//768px
+$bp-med : 48em;
+//960px
+$bp-large : 60em;
+//1280px
+$bp-larger : 80em;
+//1440px
+$bp-xl : 90em;
+//1600px
+$bp-xxl : 100em;
+
+$bp-odd-one : 61.938em;

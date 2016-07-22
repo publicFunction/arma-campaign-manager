@@ -1,9 +1,9 @@
 
-@mixin background_full() {
+@mixin background_full($repeat) {
   background-position: center center;
   background-color: #000;
   background-size: contain;
-  background-repeat: no-repeat;
+  background-repeat: $repeat;
 }
 
 @mixin background_transparent($red, $green, $blue, $trans) {

@@ -16,7 +16,7 @@
                 controller  : 'DefaultController'
             })
             .state('dashboard', {
-                url         : "/home",
+                url         : "/dashboard",
                 templateUrl : "/templates/dashboard.html",
                 controller  : 'DashboardController'
             })

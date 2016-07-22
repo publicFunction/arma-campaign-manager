@@ -10,9 +10,9 @@
     </head>
     <body>
         <div class="background"></div>
-        <div class="container">
+        <div class="container-fluid">
             <nav class="navbar navbar-default">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="sr-only">Toggle navigation</span>
@@ -20,28 +20,33 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" ui-sref="home">Campaign Manager</a>
+                        <a class="navbar-brand" ui-sref="home">Campaign Manager<span class="arma"></span></a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a ui-sref="home">Home</a></li>
-                            <li><a ui-sref="about">About</a></li>
-                            <li><a ui-sref="contact">Contact</a></li>
+                            <li><a ui-sref="home" title="Home"><span class="home"></span></a></li>
+                            <li><a ui-sref="about" title="About"><span class="about"></span></a></li>
+                            <li><a ui-sref="contact" title="Contact"><span class="contact"></span></a></li>
                             <li class="navbar-status">
-                                <div class="btn btn-primary" ng-show="true"><a ui-sref="login">Login</a></div>
-                                <div class="btn btn-warn" ng-show="false"><a ui-sref="logout">Log Out</a></div>
+                                <div class="auth login" ng-show="true"><a ui-sref="login">Login</a></div>
+                                <div class="auth logout" ng-show="false"><a ui-sref="logout">Log Out</a></div>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </div>
-        <div class="welcome container">
+        <div class="welcome container-fluid">
+            <div class="row header-logo">
+                <div class="col-md-4 stripe"></div>
+                <div class="col-md-4 arma-logo"></div>
+                <div class="col-md-4 stripe"></div>
+            </div>
             <div ui-view class="view-animate container-fluid"></div>
         </div>
-        <div class="container footer">
+        <div class="container-fluid footer">
             <div class="col-md-12">
-                &copy;2016 publicFunction.co.uk (Chris Moss). All Rights Reserved.
+                &copy; 2016 - publicFunction (Chris Moss). publicFunction.co.uk. All Rights Reserved.
             </div>
             <div class="col-md-4"></div>
             <div class="col-md-4"></div>
