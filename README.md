@@ -1,5 +1,8 @@
-# AngularJS Base Boilerplate
+# ARMA Campaign Manager
 
-Boilerplate for AngularJS 1.5.4 ONLY
+A management system frontend to allow ARMA communities to manage campaigns and missions.
+
+
+WIP
 
 
