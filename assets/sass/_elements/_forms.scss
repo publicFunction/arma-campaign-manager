@@ -1,0 +1,12 @@
+.form-group {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+input {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  &[type=submit] {
+    width: auto;
+  }
+}

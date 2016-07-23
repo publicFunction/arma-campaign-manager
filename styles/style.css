@@ -105,6 +105,16 @@ body {
     color: #FFF;
     background-color: rgba(0, 0, 0, 0.7); }
 
+.form-group {
+  width: 100%;
+  margin: 0.5rem 0; }
+
+input {
+  padding: 0.5rem 1rem;
+  width: 100%; }
+  input[type=submit] {
+    width: auto; }
+
 nav.navbar.navbar-default {
   background-color: rgba(0, 0, 0, 0.7);
   border: none; }
@@ -169,7 +179,7 @@ nav .navbar-header {
     width: auto; }
   .navbar-collapse ul > li.navbar-status {
     position: absolute;
-    right: 3%;
+    right: 0;
     top: 0;
     padding: 0;
     display: inline-block;
@@ -201,9 +211,11 @@ nav .navbar-header {
         cursor: pointer; }
 
 .login {
-  width: 75%;
+  width: 100%;
   margin: 0 auto;
   position: relative; }
+  .login h1 {
+    text-align: center; }
 
 .home {
   width: 100%; }
