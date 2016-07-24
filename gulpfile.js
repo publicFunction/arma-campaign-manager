@@ -19,8 +19,7 @@ var angularpath = [
     'angular/routes.js',
     'angular/controllers/**/*',
     'angular/directives/**/*',
-    'angular/services/**/*',
-
+    'angular/services/**/*'
 ];
 var angularlib = [
     'angular.min.js',

@@ -6,6 +6,7 @@
 input {
   padding: 0.5rem 1rem;
   width: 100%;
+  color: $form_input_color;
   &[type=submit] {
     width: auto;
   }
