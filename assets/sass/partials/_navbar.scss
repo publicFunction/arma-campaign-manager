@@ -1,3 +1,9 @@
+.container-fluid {
+  &.nav {
+    padding: 0;
+  }
+}
+
 nav {
   &.navbar.navbar-default {
     @include background_transparent(0, 0, 0, 0.7);
@@ -6,11 +12,11 @@ nav {
       &.navbar-brand {
         color: $arma_orange;
         font-weight: 700;
-        text-indent: 2rem;
+        text-indent: 2.5rem;
         position: relative;
         span.arma {
           position: absolute;
-          left: 0;
+          left: 0.5rem;
           top: 0.5rem;
           display: inline-block;
           width: 35px;
@@ -26,7 +32,7 @@ nav {
     }
   }
   .navbar-header {
-    margin: 10px 0;
+    margin: 7px 0;
     width: auto;
     button {
 

@@ -1,6 +1,6 @@
-@import "https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic,300,300italic&subset=latin,latin-ext";
 @import '//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css';
 
+@import "_definitions/fonts";
 @import "_mixins/mixin";
 @import "_definitions/colors";
 
@@ -8,6 +8,9 @@ body {
   font-family: Roboto, Helvetica, Arial, sans-serif;
   font-size: 100%;
   min-width: 320px;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Titillium Web", Helvetica, Arial, sans-serif;
+  }
   h1 {
     font-size: 225%;
     margin: 10px 0;
@@ -44,7 +47,7 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    @include background_full('repeat');
+    @include background_full(repeat-y);
     background-image: url('/assets/images/backgrounds/arma_blank.jpg');
     z-index: -1;
   }
@@ -58,7 +61,7 @@ body {
       margin: 1rem 0;
       .stripe {
         height: 202px;
-        border-bottom: 20px solid #FFF;
+        border-bottom: 20px solid $default_body_color;
       }
       .arma-logo {
         background: url('/assets/images/logos/arma3.png') no-repeat center center transparent;

@@ -1,1 +1,4 @@
-console.log("Another JS File");
+(function ($) {
+
+
+})(jQuery);

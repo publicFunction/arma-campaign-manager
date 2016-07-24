@@ -1,1 +1,0 @@
-console.log("Another JS File"),console.log("File 2"),window.location;

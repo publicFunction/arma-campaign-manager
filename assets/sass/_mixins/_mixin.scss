@@ -2,7 +2,7 @@
 @mixin background_full($repeat) {
   background-position: center center;
   background-color: #000;
-  background-size: contain;
+  background-size: cover;
   background-repeat: $repeat;
 }
 

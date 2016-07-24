@@ -1,12 +1,19 @@
 
-$default_body_color: #FFF;
-$nav_default_text_color: #FFF;
-$menu_border_color: #CCC;
-$menu_text_color: #CCC;
-$menu_item_border_color: #111;
+$default_body_color: rgb(255, 255, 255);
+$nav_default_text_color: rgb(255, 255, 255);
+
+$just_black: rgb(0, 0, 0);
+
+$menu_border_color: rgb(204, 204, 204);
+$menu_text_color: rgb(204, 204, 204);
+$menu_item_border_color: rgb(17, 17, 17);
 
 $auth_button_background_light: rgb(62, 91, 121);
 $auth_button_background_dark: rgb(47, 71, 95);
 
 $form_input_color: rgba(0, 0, 0, 0.8);
 $arma_orange: rgb(196, 130, 20);
+
+$feature_background_color : rgb(37, 37, 37);
+$feature_border_color : rgba(0, 0, 0, 0.25);
+$feature_shadow_color : rgb(0, 0, 0);
