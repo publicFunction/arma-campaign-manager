@@ -16,7 +16,12 @@ application.config(['$stateProvider', '$urlRouterProvider', '$sceDelegateProvide
         })
         .state('about', {
             url         : "/about",
-            templateUrl : "/templates/about.html",
+            templateUrl : "/templates/about/index.html",
+            controller  : 'DefaultController'
+        })
+        .state('about-maps', {
+            url         : "/about/maps",
+            templateUrl : "/templates/about/maps.html",
             controller  : 'DefaultController'
         })
         .state('contact', {
