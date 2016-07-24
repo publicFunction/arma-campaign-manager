@@ -1,6 +1,6 @@
 @import "../_definitions/variables";
 
-
+//320px
 @media all and (max-width: $bp-small) {
   .navbar-collapse {
     padding: 0;
@@ -28,6 +28,7 @@
   }
   body {
     .welcome {
+      padding-bottom: 2rem;
       .header-logo {
         .arma-logo {
           height: 75px;
@@ -35,8 +36,40 @@
       }
     }
   }
+  .container-fluid {
+    &.home {
+      padding: 0;
+      h2 {
+        font-size: 500%;
+      }
+      .features {
+        article {
+          width: 100%;
+          margin: 0 0 1rem;
+        }
+        .reveal {
+          width: 100%;
+          height: auto;
+          .content {
+            position: relative;
+            .image {
+              width: 100%;
+              margin: 0;
+            }
+            .gubbins {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    font-size: 75%;
+  }
 }
 
+//480px
 @media all and (min-width: $bp-small) and (max-width: $bp-med) {
   .navbar-collapse {
     ul {
@@ -56,6 +89,7 @@
   }
 }
 
+//768px
 @media all and (min-width: $bp-med) and (max-width: $bp-large) {
   body {
     .welcome {
@@ -65,6 +99,34 @@
         }
         .arma-logo {
           height: 140px;
+        }
+      }
+    }
+    .container-fluid {
+      &.home {
+        padding: 0;
+        h2 {
+          font-size: 500%;
+        }
+        .features {
+          article {
+            width: 45%;
+            margin: 0 1rem 1rem;
+          }
+          .reveal {
+            width: 100%;
+            height: auto;
+            .content {
+              position: relative;
+              .image {
+                width: 100%;
+                margin: 0;
+              }
+              .gubbins {
+                width: 100%;
+              }
+            }
+          }
         }
       }
     }
@@ -84,10 +146,39 @@
   }
 }
 
+//960px
 @media all and (min-width: $bp-large) and (max-width: $bp-larger) {
-
+  body {
+    .container-fluid {
+      &.home {
+        padding: 0;
+        h2 {
+          font-size: 500%;
+        }
+        .features {
+          article {
+            width: 45%;
+            margin: 0 1rem 1rem;
+          }
+          .reveal {
+            height: auto;
+            .content {
+              position: relative;
+              .image {
+                width: 20%;
+              }
+              .gubbins {
+                width: 75%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
+//1280px
 @media all and (min-width: $bp-larger) and (max-width: $bp-xl) {
   .navbar-collapse {
     ul {
@@ -98,10 +189,12 @@
   }
 }
 
+//1440px
 @media all and (min-width: $bp-xl) and (max-width: $bp-xxl){
 
 }
 
+//1600px
 @media all and (min-width: $bp-xxl) {
 
 }
