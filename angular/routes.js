@@ -14,6 +14,11 @@ application.config(['$stateProvider', '$urlRouterProvider', '$sceDelegateProvide
             templateUrl : "/templates/dashboard/index.html",
             controller  : 'DashboardController'
         })
+        .state('settings', {
+            url         : "/settings",
+            templateUrl : "/templates/settings/index.html",
+            controller  : 'DashboardController'
+        })
         .state('about', {
             url         : "/about",
             templateUrl : "/templates/about/index.html",

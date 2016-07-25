@@ -27,6 +27,7 @@
                             <li><a ui-sref="home" title="Home"><span class="home"></span></a></li>
                             <li><a ui-sref="about" title="About"><span class="about"></span></a></li>
                             <li><a ui-sref="contact" title="Contact"><span class="contact"></span></a></li>
+                            <li ng-show="isAuth()" class="settings"><a ui-sref="settings" title="Settings"><span class="settings"></span></a></li>
                             <li ng-show="isAuth()" class="dashboard"><a ui-sref="dashboard" title="Dashboard"><span class="dashboard"></span></a></li>
                             <li class="navbar-status">
                                 <div ng-hide="isAuth()" class="auth login"><a ui-sref="login">Login</a></div>

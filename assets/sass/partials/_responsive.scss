@@ -72,9 +72,11 @@
 //480px
 @media all and (min-width: $bp-small) and (max-width: $bp-med) {
   .navbar-collapse {
+    overflow: hidden;
     ul {
       &.nav {
-        width: 53%;
+        overflow: hidden;
+        width: 92%;
       }
     }
   }
@@ -131,6 +133,18 @@
       }
     }
   }
+  .navbar-collapse {
+    ul {
+      &.nav {
+        width: auto;
+        &>li {
+          &.navbar-status {
+            width: 20%;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media all and (min-width: $bp-xsmall) and (max-width: $bp-odd-one) {
@@ -141,6 +155,18 @@
       }
       .arma-logo {
         margin: 0 auto;
+      }
+    }
+  }
+  .navbar-collapse {
+    ul {
+      &.nav {
+        width: auto;
+        &>li {
+          &.navbar-status {
+            width: 20%;
+          }
+        }
       }
     }
   }
@@ -172,6 +198,18 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+  .navbar-collapse {
+    ul {
+      &.nav {
+        width: auto;
+      }
+      &>li {
+        &.navbar-status {
+          width: 20%;
         }
       }
     }

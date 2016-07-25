@@ -145,10 +145,14 @@ nav.navbar.navbar-default {
 
 nav .navbar-header {
   margin: 7px 0;
-  width: auto; }
+  padding: 0 1rem;
+  width: auto;
+  min-width: 13%; }
 
 .navbar {
   margin: 0; }
+  .navbar .container-fluid {
+    padding: 0; }
 
 .navbar-nav {
   margin: 0; }
@@ -159,8 +163,6 @@ nav .navbar-header {
     vertical-align: middle;
     text-align: center;
     border-right: 2px solid #111111; }
-    .navbar-nav > li.dashboard {
-      float: right; }
     .navbar-nav > li a {
       position: relative;
       top: 0;
@@ -183,11 +185,14 @@ nav .navbar-header {
           background-position: 0px -386px; }
         .navbar-nav > li a span.dashboard {
           background-position: -70px -210px; }
+        .navbar-nav > li a span.settings {
+          background-position: 0px -172px; }
 
 .navbar-collapse {
-  position: relative; }
+  position: relative;
+  width: 100%; }
   .navbar-collapse ul.nav {
-    width: 75%; }
+    width: 78.1%; }
   .navbar-collapse ul > li.navbar-status {
     position: absolute;
     right: 0;
@@ -199,8 +204,8 @@ nav .navbar-header {
     border: none;
     background: url("/assets/images/icons/account_btn_icon.png") no-repeat 8% 50% #3e5b79; }
     .navbar-collapse ul > li.navbar-status .auth {
-      width: 67%;
-      margin-left: 2.5rem;
+      width: 70%;
+      margin-left: 3.5rem;
       padding: 9.5px 5px;
       display: inline-block; }
       .navbar-collapse ul > li.navbar-status .auth.dashboard {
@@ -355,8 +360,11 @@ nav .navbar-header {
     font-size: 75%; } }
 
 @media all and (min-width: 30em) and (max-width: 48em) {
-  .navbar-collapse ul.nav {
-    width: 53%; }
+  .navbar-collapse {
+    overflow: hidden; }
+    .navbar-collapse ul.nav {
+      overflow: hidden;
+      width: 92%; }
   body .welcome .header-logo .arma-logo {
     height: 100px; } }
 
@@ -381,13 +389,21 @@ nav .navbar-header {
           width: 100%;
           margin: 0; }
         body .container-fluid.home .features .reveal .content .gubbins {
-          width: 100%; } }
+          width: 100%; }
+  .navbar-collapse ul.nav {
+    width: auto; }
+    .navbar-collapse ul.nav > li.navbar-status {
+      width: 20%; } }
 
 @media all and (min-width: 20em) and (max-width: 61.938em) {
   .welcome .header-logo .stripe {
     display: none; }
   .welcome .header-logo .arma-logo {
-    margin: 0 auto; } }
+    margin: 0 auto; }
+  .navbar-collapse ul.nav {
+    width: auto; }
+    .navbar-collapse ul.nav > li.navbar-status {
+      width: 20%; } }
 
 @media all and (min-width: 60em) and (max-width: 80em) {
   body .container-fluid.home {
@@ -404,7 +420,11 @@ nav .navbar-header {
         body .container-fluid.home .features .reveal .content .image {
           width: 20%; }
         body .container-fluid.home .features .reveal .content .gubbins {
-          width: 75%; } }
+          width: 75%; }
+  .navbar-collapse ul.nav {
+    width: auto; }
+  .navbar-collapse ul > li.navbar-status {
+    width: 20%; } }
 
 @media all and (min-width: 80em) and (max-width: 90em) {
   .navbar-collapse ul.nav {
