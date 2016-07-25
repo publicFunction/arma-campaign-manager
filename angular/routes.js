@@ -11,7 +11,7 @@ application.config(['$stateProvider', '$urlRouterProvider', '$sceDelegateProvide
         })
         .state('dashboard', {
             url         : "/dashboard",
-            templateUrl : "/templates/dashboard.html",
+            templateUrl : "/templates/dashboard/index.html",
             controller  : 'DashboardController'
         })
         .state('about', {
@@ -32,6 +32,11 @@ application.config(['$stateProvider', '$urlRouterProvider', '$sceDelegateProvide
         .state('login', {
             url         : "/login",
             templateUrl : "/templates/auth/login.html",
+            controller  : 'AuthController'
+        })
+        .state('logout', {
+            url         : "/logout",
+            template : "",
             controller  : 'AuthController'
         });
 }]);

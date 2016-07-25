@@ -52,6 +52,9 @@ nav {
     vertical-align: middle;
     text-align: center;
     border-right: 2px solid $menu_item_border_color;
+    &.dashboard {
+      float: right;
+    }
     a {
       position: relative;
       top: 0;
@@ -76,6 +79,9 @@ nav {
         &.contact {
           background-position: 0px -386px;
         }
+        &.dashboard {
+          background-position: -70px -210px;
+        }
       }
     }
   }
@@ -85,7 +91,7 @@ nav {
   position: relative;
   ul {
     &.nav {
-      width: auto;
+      width: 75%;
     }
     &> li {
       &.navbar-status {
@@ -94,7 +100,7 @@ nav {
         top: 0;
         padding: 0;
         display: inline-block;
-        width: auto;
+        width: 10%;
         vertical-align: middle;
         border: none;
         background: url('/assets/images/icons/account_btn_icon.png') no-repeat 8% 50% $auth_button_background_light;
@@ -102,6 +108,12 @@ nav {
           width: 67%;
           margin-left: 2.5rem;
           padding: 9.5px 5px;
+          display: inline-block;
+          &.dashboard {
+            margin-left: 0;
+            width: 10%;
+            display: inline-block;
+          }
           a {
             display: inline-block;
             width: 100%;

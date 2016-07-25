@@ -159,6 +159,8 @@ nav .navbar-header {
     vertical-align: middle;
     text-align: center;
     border-right: 2px solid #111111; }
+    .navbar-nav > li.dashboard {
+      float: right; }
     .navbar-nav > li a {
       position: relative;
       top: 0;
@@ -179,25 +181,32 @@ nav .navbar-header {
           background-position: 0px -453px; }
         .navbar-nav > li a span.contact {
           background-position: 0px -386px; }
+        .navbar-nav > li a span.dashboard {
+          background-position: -70px -210px; }
 
 .navbar-collapse {
   position: relative; }
   .navbar-collapse ul.nav {
-    width: auto; }
+    width: 75%; }
   .navbar-collapse ul > li.navbar-status {
     position: absolute;
     right: 0;
     top: 0;
     padding: 0;
     display: inline-block;
-    width: auto;
+    width: 10%;
     vertical-align: middle;
     border: none;
     background: url("/assets/images/icons/account_btn_icon.png") no-repeat 8% 50% #3e5b79; }
     .navbar-collapse ul > li.navbar-status .auth {
       width: 67%;
       margin-left: 2.5rem;
-      padding: 9.5px 5px; }
+      padding: 9.5px 5px;
+      display: inline-block; }
+      .navbar-collapse ul > li.navbar-status .auth.dashboard {
+        margin-left: 0;
+        width: 10%;
+        display: inline-block; }
       .navbar-collapse ul > li.navbar-status .auth a {
         display: inline-block;
         width: 100%; }
@@ -294,7 +303,7 @@ nav .navbar-header {
           .home .features .reveal .content .gubbins p {
             font-style: italic; }
 
-.dashboard {
+.container-fluid.dashboard {
   width: 75%;
   margin: 0 auto;
   position: relative; }
