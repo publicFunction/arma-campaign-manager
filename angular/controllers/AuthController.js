@@ -20,12 +20,17 @@ application.controller('AuthController', ['$scope', '$location', 'AuthService', 
         );
     },
     $scope.processLogout = function() {
-        AuthService.logout(function () {
-            $location.path('/');
-        },
-        function () {
-            $location.path('/dashboard');
-        });
+        AuthService.logout(
+            function (success) {
+                $location.path('/');
+            },
+            function (error) {
+                console.log(error);
+                if(error.status === 401) {
+                    //$location.path('/login');
+                }
+            }
+        );
     },
     $scope.user = function() {
         AuthService.logout(function (success) {
@@ -36,7 +41,7 @@ application.controller('AuthController', ['$scope', '$location', 'AuthService', 
         });
     }
     $scope.isAuth = function () {
-        return AuthService.isLoggedIn();
+        //return AuthService.isLoggedIn();
     }
 
 }]);

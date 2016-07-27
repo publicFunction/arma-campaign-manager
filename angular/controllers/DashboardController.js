@@ -4,7 +4,7 @@ application.controller('DashboardController', ['$rootScope', '$scope', '$state',
     $scope.auth = {};
 
     $scope.init = function () {
-        console.log(AuthService.isLoggedIn());
+        //console.log(AuthService.isLoggedIn());
     };
 
     $scope.auth = function () {

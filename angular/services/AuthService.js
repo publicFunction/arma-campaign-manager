@@ -35,12 +35,16 @@ application.factory('AuthService', ['$http', 'config', function($http, config) {
             ).then(
                 function(success) {
                     console.log("Logout Successful");
-                    localStorage.clear()
-                    successResp();
+                    localStorage.clear();
+                    successResp(success);
                 },
                 function(error) {
-                    console.log("Logout Failed");
-                    errorResp();
+                    console.error("Logout Failed");
+                    if(error.status === 401) {
+                        localStorage.removeItem('token');
+                        console.error(error.status, error.statusText);
+                    }
+                    errorResp(error);
                 }
             );
         },
@@ -55,7 +59,7 @@ application.factory('AuthService', ['$http', 'config', function($http, config) {
             }).then(
                 function(success) {
                     console.log("Successful Auth Call");
-                    successResp();
+                    successResp(success);
                 },
                 function(error) {
                     console.log("Error on Auth Call");
@@ -64,17 +68,31 @@ application.factory('AuthService', ['$http', 'config', function($http, config) {
             );
         },
 
-        getAuth : function() {
+        getToken : function() {
             return localStorage.getItem('token');
         },
 
-        isLoggedIn : function () {
-
-            if(localStorage.getItem('token') !== null) {
-                return true;
-            }
-
-            return false;
+        isLoggedIn : function (successResp, errorResp) {
+            $http({
+                method : 'GET',
+                url : config.apiUrl+'auth',
+                headers : {
+                    'Authorization': 'Bearer '+localStorage.getItem('token')
+                }
+            }).then(
+                function(success) {
+                    console.debug("Successful Auth Call");
+                    successResp(success);
+                },
+                function(error) {
+                    console.error("Error on Auth Call");
+                    if(error.status === 401 || error.status === 400) {
+                        localStorage.removeItem('token');
+                        console.error(error.status, error.statusText);
+                    }
+                    errorResp(error);
+                }
+            );
         }
         
     };

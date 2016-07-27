@@ -11,7 +11,18 @@ application.constant('config', {
 });
 
 application.run(['$rootScope', '$state', '$location', 'AuthService', function ($rootScope, $state, $location, AuthService) {
-    if(!AuthService.isLoggedIn()) {
-        $location.path('/login');
-    }
+    $rootScope.$on('$stateChangeStart',
+        function(event, toState, toParams, fromState, fromParams) {
+            AuthService.isLoggedIn(
+                function(success) {
+                    console.debug("Current User is valid");
+                    //console.log(success);
+                },
+                function(error) {
+                    console.error(error);
+                    $location.path('/login')
+                }
+            );
+        }
+    );
 }]);
