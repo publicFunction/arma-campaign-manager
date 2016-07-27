@@ -11,16 +11,18 @@ application.constant('config', {
 });
 
 application.run(['$rootScope', '$state', '$location', 'AuthService', function ($rootScope, $state, $location, AuthService) {
+    var public_routes = ['', '/', '/about', '/contact'];
     $rootScope.$on('$stateChangeStart',
         function(event, toState, toParams, fromState, fromParams) {
             AuthService.isLoggedIn(
                 function(success) {
-                    console.debug("Current User is valid");
-                    //console.log(success);
+                    console.debug("Current User is valid : "+success.status+" "+success.statusText);
+                    $rootScope.authorised = true;
                 },
                 function(error) {
-                    console.error(error);
-                    $location.path('/login')
+                    if(public_routes.indexOf(toState.url) < 0) {
+                        $location.path('/login');
+                    }
                 }
             );
         }

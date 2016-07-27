@@ -63,7 +63,7 @@ application.factory('AuthService', ['$http', 'config', function($http, config) {
                 },
                 function(error) {
                     console.log("Error on Auth Call");
-                    errorResp();
+                    errorResp(error);
                 }
             );
         },

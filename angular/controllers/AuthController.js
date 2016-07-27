@@ -1,5 +1,5 @@
 
-application.controller('AuthController', ['$scope', '$location', 'AuthService', function($scope, $location, AuthService) {
+application.controller('AuthController', ['$rootScope', '$scope', '$location', 'AuthService', function($rootScope, $scope, $location, AuthService) {
 
     $scope.account = {"email" : null, "password" : null};
     $scope.email;
@@ -22,26 +22,27 @@ application.controller('AuthController', ['$scope', '$location', 'AuthService', 
     $scope.processLogout = function() {
         AuthService.logout(
             function (success) {
-                $location.path('/');
+                console.log(success);
+                $rootScope.authorised = false;
+                $location.path('/login');
             },
             function (error) {
-                console.log(error);
-                if(error.status === 401) {
-                    //$location.path('/login');
-                }
+                console.error("Error Processing Logout: "+error.status+" "+error.statusText);
             }
         );
     },
     $scope.user = function() {
-        AuthService.logout(function (success) {
-            $scope.user = success
-        },
-        function () {
-            $location.path('/dashboard');
-        });
-    }
+        AuthService.logout(
+            function (success) {
+                $scope.user = success
+            },
+            function () {
+                $location.path('/dashboard');
+            }
+        );
+    },
     $scope.isAuth = function () {
-        //return AuthService.isLoggedIn();
+        return $rootScope.authorised;
     }
 
 }]);
