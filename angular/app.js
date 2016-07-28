@@ -6,7 +6,7 @@ application.config(['$httpProvider', function($httpProvider) {
 }]);
 
 application.constant('config', {
-    apiUrl: 'http://api.cm.app.dev/v1/',
+    apiUrl: 'http://api.a3cman.publicfunction.co.uk/v1/',
     apiVersion: 'v1'
 });
 
