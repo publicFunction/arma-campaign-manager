@@ -31,6 +31,8 @@ body {
     font-size: 87%;
     margin: 2px 0;
     font-weight: 700; }
+  body ul {
+    list-style: none; }
   body .background {
     position: fixed;
     width: 100%;
@@ -45,7 +47,7 @@ body {
     z-index: -1; }
   body .welcome {
     width: 100%;
-    padding-bottom: 20px;
+    padding: 5rem 0;
     color: white; }
     body .welcome .header-logo {
       position: relative;
@@ -59,6 +61,12 @@ body {
         height: 202px;
         width: 33.333%;
         position: relative; }
+    body .welcome.dashboard .arma-logo, body .welcome.settings .arma-logo {
+      height: 120px;
+      width: 33.333%; }
+    body .welcome.dashboard .stripe, body .welcome.settings .stripe {
+      height: 120px;
+      border-bottom: none; }
   body .footer {
     position: fixed;
     bottom: 0;

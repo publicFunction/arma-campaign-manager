@@ -1,7 +1,51 @@
 .container-fluid {
   &.dashboard {
-    width: 75%;
+    width: 95%;
     margin: 0 auto;
     position: relative;
+    header {
+      display: flex;
+      margin: 2rem 0;
+      nav {
+        display: block;
+        width: 100%;
+        ul {
+          &> li {
+            display: inline-block;
+            position: relative;
+            a {
+              padding: 1rem 1.5rem;
+              background: $panel_background_color;
+              color: $just_white;
+              display: block;
+              &:hover {
+                text-decoration: none;
+                background-color: $arma_orange;
+                color: $black_overlay;
+              }
+            }
+          }
+        }
+      }
+    }
+    h2{
+      margin: 1rem 0;
+    }
+    section {
+      display: flex;
+      flex-flow: row wrap;
+      align-content: space-between;
+      article {
+        flex: 1;
+        min-width: 25rem;
+        height: 20rem;
+        border-radius: 1rem;
+        border: 2px solid $arma_orange;
+        box-shadow: 0px 0px 1.5rem $arma_orange;
+        margin: 3rem 1rem;
+        padding: 1rem 1.5rem;
+        background: $panel_background_color;
+      }
+    }
   }
 }

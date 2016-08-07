@@ -41,6 +41,9 @@ body {
     margin: 2px 0;
     font-weight: 700;
   }
+  ul {
+    list-style: none;
+  }
   .background {
     position: fixed;
     width: 100%;
@@ -54,7 +57,7 @@ body {
   .welcome {
     width: 100%;
     //@include background_transparent(0, 0, 0, 0.7);
-    padding-bottom: 20px;
+    padding: 5rem 0;
     color: $default_body_color;
     .header-logo {
       position: relative;
@@ -69,6 +72,17 @@ body {
         height: 202px;
         width: 33.333%;
         position: relative;
+      }
+    }
+    &.dashboard,
+    &.settings {
+      .arma-logo {
+        height: 120px;
+        width: 33.333%;
+      }
+      .stripe {
+        height: 120px;
+        border-bottom: none;
       }
     }
   }

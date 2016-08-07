@@ -58,6 +58,12 @@ gulp.task('angular', function() {
     gulp.src(angularpath)
         .pipe(concat('app.min.js'))
         .pipe(uglify())
+        .on('error', function(error) {
+            console.log(error.toString());
+            setTimeout(function() {
+                gulp.task('default', ['watch']);
+            }, 500)
+        })
         .pipe(gulp.dest('angular/'))
 });
 

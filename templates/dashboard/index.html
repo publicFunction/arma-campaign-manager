@@ -2,14 +2,15 @@
     <header>
         <nav>
             <ul>
-                <li><a>Campaigns</a></li>
-                <li><a>Community</a></li>
-                <li><a>Maps</a></li>
+                <li><a href="#">Campaigns</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Maps</a></li>
+                <li class="pull-right"><a>Welcome {{user.name}}</a></li>
             </ul>
         </nav>
     </header>
-    <div>
-        <h2>Dashboard</h2>
+    <div class="dashboard-panel">
+        <h2>Dashboard of {{community.profile.name}}<span class="pull-right">Members: {{community.totalMembers}}</span></h2>
         <section>
             <article>
                 <h3>Current Campaign</h3>
@@ -18,7 +19,16 @@
                 <h3>Latest Mission</h3>
             </article>
             <article>
-                <h3>Some Stuff</h3>
+                <h3>Server Status</h3>
+                <div ng-if="community.servers">
+                    <ul>
+                        <li ng-repeat="server in community.servers">
+                            <span class="server-name">{{server.name}}</span>
+                            <span class="server-ip">{{server.ip_address}}:{{server.port}}</span>
+                            <span class="server-status unknown" ng-init="getServerStatus(server.id)">X</span>
+                        </li>
+                    </ul>
+                </div>
             </article>
             <article>
                 <h3>Latest Community Updates</h3>
