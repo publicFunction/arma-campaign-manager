@@ -1,4 +1,4 @@
-var application = angular.module('campaignmanager', ['ngCookies', 'ui.router'])
+var application = angular.module('campaignmanager', ['ngCookies', 'ui.router']);
 
 application.config(['$httpProvider', function($httpProvider) {
     $httpProvider.defaults.useXDomain = true;
@@ -30,4 +30,11 @@ application.run(['$rootScope', '$state', '$location', 'AuthService', function ($
             );
         }
     );
+
+    var Singleton = new function () {
+        var self = this;
+        self.methodForIDE = function() {
+            return "HELLOO!";
+        };
+    };
 }]);

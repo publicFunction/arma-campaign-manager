@@ -1,0 +1,12 @@
+<article>
+    <h3>Server Status</h3>
+    <div ng-if="community.servers">
+        <ul>
+            <li ng-repeat="server in community.servers">
+                <span class="server-name">{{server.name}}</span>
+                <span class="server-ip">{{server.ip_address}}:{{server.port}}</span>
+                <span class="server-status unknown" ng-init="getServerStatus(server.id)">X</span>
+            </li>
+        </ul>
+    </div>
+</article>

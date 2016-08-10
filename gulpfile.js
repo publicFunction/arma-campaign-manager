@@ -13,7 +13,9 @@ var gulp = require('gulp'),
 
 
 var sass_path = 'assets/sass/**/*.scss';
-var jspath = 'assets/js/**/*.js';
+var jspath = [
+    'assets/js/**/*.js'
+];
 var angularpath = [
     'angular/app.js',
     'angular/routes.js',
