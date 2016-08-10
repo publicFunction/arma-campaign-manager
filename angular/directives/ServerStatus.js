@@ -1,16 +1,19 @@
-application.directive('serverStatus',['CommunityService', function(CommunityService) {
+application.directive('serverStatus',['CommunityService', 'ServerQueryService', function(CommunityService, ServerQueryService) {
     return {
         element: 'E',
         templateUrl : 'templates/partials/server_status.html',
         link: function(scope, elem, attr) {
-            CommunityService.getCommunity(
+            CommunityService.getCommunityServers(
                 function (success) {
-                    scope.community = success.data;
+                    scope.servers = success.data;
                 },
                 function (error) {
                     console.error(error);
                 }
             );
+            scope.getServerStatus = function(server) {
+                return ServerQueryService.contactServer(server);
+            }
         }
     }
 }]);

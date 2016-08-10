@@ -1,8 +1,7 @@
 application.factory('CampaignService', ['$http', 'config', function($http, config) {
 
     return {
-        getLatestCampaign : function (community, successCb, errorCb) {
-            console.log(community);
+        getLatestCampaign : function (community_id, successCb, errorCb) {
             $http({
                 method : 'GET',
                 url : config.apiUrl+'community',
@@ -15,7 +14,7 @@ application.factory('CampaignService', ['$http', 'config', function($http, confi
                     return successCb({"name" : "Campaign One"});
                 },
                 function (response) {
-                    errorCb(response);
+                    return errorCb(response);
                 }
             );
 

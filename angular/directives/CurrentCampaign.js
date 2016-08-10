@@ -11,7 +11,6 @@ application.directive('currentCampaign', ['CampaignService', 'CommunityService',
                 function (community_id) {
                     CampaignService.getLatestCampaign(community_id,
                         function (success) {
-                            console.log(success);
                             scope.campaign = success;
                         },
                         function (error) {

@@ -3,7 +3,8 @@ application.factory('ServerQueryService', ['$http', 'config', function($http, co
     return {
         contactServer : function (server) {
             console.debug("Connecting to server: "+server.name+'...');
-            /*connection = new WebSocket('wss://'+server.ip_address+':'+server.query_port);
+            
+            connection = new WebSocket('wss://'+server.ip_address+':'+server.query_port);
 
             connection.onerror = function (error) {
                 console.error(error);
@@ -14,7 +15,7 @@ application.factory('ServerQueryService', ['$http', 'config', function($http, co
             };
             connection.onmessage = function(evt) {
                 console.log(evt.data);
-            };*/
+            };
         }
     }
 }]);
