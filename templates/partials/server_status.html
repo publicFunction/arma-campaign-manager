@@ -1,11 +1,9 @@
 <article>
     <h3>Server Status</h3>
     <div ng-if="servers">
-        <ul>
-            <li ng-repeat="server in servers">
-                <span class="server-name">{{server.name}}</span>
-                <span class="server-ip">{{server.ip_address}}:{{server.port}}</span>
-                <span class="server-status unknown" ng-init="getServerStatus(server)">X</span>
+        <ul ng-repeat="server in servers">
+            <li>
+                <span class="server-status" ng-init="getServerStatus(server)">{{server_result.HostName}}</span>
             </li>
         </ul>
     </div>

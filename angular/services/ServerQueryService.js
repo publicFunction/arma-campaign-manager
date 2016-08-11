@@ -1,21 +1,22 @@
 application.factory('ServerQueryService', ['$http', 'config', function($http, config) {
 
     return {
-        contactServer : function (server) {
-            console.debug("Connecting to server: "+server.name+'...');
-            
-            connection = new WebSocket('wss://'+server.ip_address+':'+server.query_port);
+        contactServer : function (server, successCb, errorCb) {
 
-            connection.onerror = function (error) {
-                console.error(error);
-            };
-            connection.onopen = function (success) {
-                console.log(success);
-                connection.send('Ping');
-            };
-            connection.onmessage = function(evt) {
-                console.log(evt.data);
-            };
+            $http({
+                method : 'GET',
+                url : config.apiUrl+'servers/'+server.id+'/status',
+                headers : {
+                    'Authorization': 'Bearer '+localStorage.getItem('token')
+                }
+            }).then(
+                function (response) {
+                    return successCb(response.data);
+                },
+                function (error) {
+                    return errorCb(error.data);
+                }
+            )
         }
     }
 }]);
