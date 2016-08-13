@@ -2,7 +2,6 @@ application.factory('ServerQueryService', ['$http', 'config', function($http, co
 
     return {
         contactServer : function (server, successCb, errorCb) {
-
             $http({
                 method : 'GET',
                 url : config.apiUrl+'servers/'+server.id+'/status',

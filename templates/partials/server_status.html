@@ -1,9 +1,14 @@
 <article>
     <h3>Server Status</h3>
     <div ng-if="servers">
-        <ul ng-repeat="server in servers">
-            <li>
-                <span class="server-status" ng-init="getServerStatus(server)">{{server_result.HostName}}</span>
+        <ul>
+            <li ng-repeat="(ind, server) in servers">
+                <div class="server-status" ng-init="getServerStatus(server)">
+                    <div class="server">
+                        <span>{{server.name}}</span>
+                        <span>{{server_results[ind].Players}} / {{server_results[ind].MaxPlayers}}</span>
+                    </div>
+                </div>
             </li>
         </ul>
     </div>

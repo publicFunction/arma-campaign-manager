@@ -10,10 +10,10 @@ application.factory('CommunityService', ['$http', 'config', function($http, conf
                 }
             }).then(
                 function (response) {
-                    return successCb(response);
+                    return successCb(response.data);
                 },
                 function (error) {
-                    return errorCb(error);
+                    return errorCb(error.data);
                 }
             );
         },
