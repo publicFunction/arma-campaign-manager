@@ -1,4 +1,4 @@
-var application = angular.module('campaignmanager', ['ngCookies', 'ui.router'])
+var application = angular.module('campaignmanager', ['ngCookies', 'ui.router']);
 
 application.config(['$httpProvider', function($httpProvider) {
     $httpProvider.defaults.useXDomain = true;
@@ -6,7 +6,7 @@ application.config(['$httpProvider', function($httpProvider) {
 }]);
 
 application.constant('config', {
-    apiUrl: 'http://api.a3cman.publicfunction.co.uk/v1/',
+    apiUrl: 'http://api.cm.app.dev/v1/',
     apiVersion: 'v1'
 });
 
@@ -14,10 +14,13 @@ application.run(['$rootScope', '$state', '$location', 'AuthService', function ($
     var public_routes = ['', '/', '/about', '/contact'];
     $rootScope.$on('$stateChangeStart',
         function(event, toState, toParams, fromState, fromParams) {
-            AuthService.isLoggedIn(
+            $rootScope.state_path = toState.name;
+            $rootScope.user = {};
+            AuthService.isLoggedIn (
                 function(success) {
                     console.debug("Current User is valid : "+success.status+" "+success.statusText);
                     $rootScope.authorised = true;
+                    $rootScope.user = JSON.parse(localStorage.getItem('user'));
                 },
                 function(error) {
                     if(public_routes.indexOf(toState.url) < 0) {
@@ -27,4 +30,11 @@ application.run(['$rootScope', '$state', '$location', 'AuthService', function ($
             );
         }
     );
+
+    var Singleton = new function () {
+        var self = this;
+        self.methodForIDE = function() {
+            return "HELLOO!";
+        };
+    };
 }]);

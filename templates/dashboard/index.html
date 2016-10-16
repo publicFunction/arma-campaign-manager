@@ -2,24 +2,21 @@
     <header>
         <nav>
             <ul>
-                <li><a>Campaigns</a></li>
-                <li><a>Community</a></li>
-                <li><a>Maps</a></li>
+                <li><a href="#">Campaigns</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Maps</a></li>
+                <li class="pull-right"><a>Welcome {{user.name}}</a></li>
             </ul>
         </nav>
     </header>
-    <div>
-        <h2>Dashboard</h2>
+    <div class="dashboard-panel">
+        <h2>Dashboard of {{community.profile.name}}<span class="pull-right">Members: {{community.totalMembers}}</span></h2>
         <section>
-            <article>
-                <h3>Current Campaign</h3>
-            </article>
+            <article current-campaign community="community.id"></article>
             <article>
                 <h3>Latest Mission</h3>
             </article>
-            <article>
-                <h3>Some Stuff</h3>
-            </article>
+            <article server-status community="community.id"></article>
             <article>
                 <h3>Latest Community Updates</h3>
             </article>

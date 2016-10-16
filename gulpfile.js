@@ -13,7 +13,9 @@ var gulp = require('gulp'),
 
 
 var sass_path = 'assets/sass/**/*.scss';
-var jspath = 'assets/js/**/*.js';
+var jspath = [
+    'assets/js/**/*.js'
+];
 var angularpath = [
     'angular/app.js',
     'angular/routes.js',
@@ -58,6 +60,12 @@ gulp.task('angular', function() {
     gulp.src(angularpath)
         .pipe(concat('app.min.js'))
         .pipe(uglify())
+        .on('error', function(error) {
+            console.log(error.toString());
+            setTimeout(function() {
+                gulp.task('default', ['watch']);
+            }, 500)
+        })
         .pipe(gulp.dest('angular/'))
 });
 

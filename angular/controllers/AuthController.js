@@ -22,7 +22,6 @@ application.controller('AuthController', ['$rootScope', '$scope', '$location', '
     $scope.processLogout = function() {
         AuthService.logout(
             function (success) {
-                console.log(success);
                 $rootScope.authorised = false;
                 $location.path('/login');
             },
